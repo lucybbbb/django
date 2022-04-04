@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+{% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+/* header */
+.header {
+  background-image:url({% static 'photos/f56.jpg' %}) ;
+  padding: 30px;
+  background-size:100%;
+  background-repeat:no-repeat;
+  text-align: center;
+}
+ 
+  
+  
+/* nav bar */
+.topnav {
+  overflow: hidden;
+  background-color: #51753e;
+}
+/* nav bar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* hover */
+.topnav a:hover {
+  background-color: rgb(219, 218, 218);
+  color: black;
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 150px;
+  max-height: 350px;
+  display: inline-block;
+}
+.container img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #d6e6d9;
+  color: black;
+  font-size: 16px;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn:hover {
+  background-color: black;
+  color: white;
+}
+/* bottom hlink */
+a {
+  color: #64D353;
+  align: center;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1 style="font-size: 49px">MY MEAL PLAN : {{user.username}}</h1>
+</div>
+<div class="topnav">
+  <a href="{% url 'planner:meal_editor' %}">Back</a>
+  <a href="{% url 'planner:account' %}">Account Menu</a>
+  <a href="{% url 'logout' %}">Log Out</a>
+</div>
+&nbsp;
+<div class="container">
+  <p> MONDAY </p>
+  <img src=https://images.immediate.co.uk/production/volatile/sites/30/2020/08/aubergine-chickpea-stew-a62d4e9.jpg?quality=90&webp=true&resize=300,272>
+  <button class="btn"><a href = "{% url 'planner:recipe' %}">View Recipe</a></button>
+  <p>Aubergine & chickpea stew</p>
+</div>
+<div class="container">
+  <p> TUESDAY </p>
+  <img src=https://images.immediate.co.uk/production/volatile/sites/30/2020/08/artichoke-aubergine-rice-recipe-image-2e7d0a8.jpg?quality=90&webp=true&resize=300,272>
+  <button class="btn">View Recipe</button>
+  <p>Artichoke & aubergine rice</p>
+</div>
+<div class="container">
+  <p>WEDNESDAY</p>
+  <img src=https://images.immediate.co.uk/production/volatile/sites/30/2020/08/squash-spinach-fusilli-with-pecans-0690874.jpg?quality=90&webp=true&resize=300,272>
+  <button class="btn">View Recipe</button>
+  <p>Squash & spinach fusilli with pecans</p>
+</div>
+<div class="container">
+  <p>THURSDAY</p>
+  <img src=https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chargrilled-tacos-3060d1e.jpg?quality=90&webp=true&resize=300,272>
+  <button class="btn">View Recipe</button>
+  <p>Easy vegan tacos with smoky salsa</p>
+</div>
+<div class="container">
+  <p>FRIDAY</p>
+  <img src=https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-279536_10-cf2dec6.jpg?quality=90&webp=true&resize=300,272>
+  <button class="btn">View Recipe</button>
+  <p>Quinoa with stir-fried winter veg</p>
+</div>
+<div class="container">
+  <p>SATURDAY</p>
+  <img src=https://images.immediate.co.uk/production/volatile/sites/30/2020/08/vegan-shepherds-pie-d0ee305.jpg?quality=90&webp=true&resize=300,272>
+  <button class="btn">View Recipe</button>
+  <p>Vegan shepherd's pie with crispy potato</p>
+</div>
+<div class="container">
+  <p>SUNDAY</p>
+  <img src=https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-279531_11-cc07e8a.jpg?quality=90&webp=true&resize=300,272>
+  <button class="btn">View Recipe</button>
+  <p>One pot vegan courgette risotto</p>
+</div>
+<p><b><a href="default.asp" target="_blank">Edit Meals</a></b></p>
+</body>
+</html>

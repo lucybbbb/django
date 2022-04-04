@@ -1,0 +1,28 @@
+
+{% load static %}
+<body style="background-image: url({% static '/images/f56.jpg' %});
+background-repeat:no-repeat;
+background-size:cover;">
+<style>
+.ribbon {
+  position: relative;
+  top: -16px;
+  right: -706px;
+}</style>
+
+</body>
+<html>
+  <div style="text-align:center">
+    {%include 'head.html' %}
+<head>
+  <title>{% block title %}FITNESS APP{% endblock %}</title>
+
+<body>
+  <main>
+    {% block content %}
+
+    
+    {% endblock %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<body style="background-image: url({% static '/images/f56.jpg' %});
+background-repeat:no-repeat;
+background-size:100%; ">
+</body>
+<link rel="stylesheet" href="#">
+<style>
+div.content {
+  height: 900px;
+  display:grid;
+  align-items: center;
+  justify-content: center;
+}
+div.item {
+  width: 10em;
+}
+</style>
+<div class=content>
+  <div class ='item'>
+    {% block title %}
+    <div style="text-align:center"; font-size: 700px;>Log In</div>
+    {% endblock %}
+
+{% block content %}
+
+      <h2>
+        <div style="text-align:center"; font-size: 700px; >Log In</div>
+        
+      </h2>
+   <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+   
+    <div style="text-align:center">
+     <button type="submit"><a href="{% url 'planner:account' %}">Log In</a></button>
+  
+   </form>
+
+      <p><div style="text-align:center"><a href="{% url 'password_reset' %}"> Forget Password</a></div>
+      
+   </div>
+   
+
+  </p>
+  </div>
+</div>
+{% endblock %}

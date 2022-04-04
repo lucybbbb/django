@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<body style="background-image: url({% static '/images/p56.jpg' %});
+background-repeat:no-repeat;
+background-size:cover;">
+<style>
+div.content {
+		height: 500px;
+		display:grid;
+		align-items: center;
+		justify-content: center;
+	}
+div.item {
+	  
+		width: 10em;
+	}
+			
+</style>
+</body>
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}         
+<div class="container py-5">
+<div class=content> 
+	<div class ='item'>
+<h1>Register</h1>
+	<form method = "POST">
+    {% csrf_token %}
+	{{ register_form|crispy }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+<button class="btn btn-success btn-lg float-center" type="submit" style="background-color: rgb(212, 231, 218)";>
+	<a href="{% url 'dietreq' %}">Proceed to dietary requirements</a></button>
+<button class="btn btn-success btn-lg float-center" type="submit" style="background-color: rgb(212, 231, 218)";;>
+	<a href="{% url 'home' %}">Back to Login page</a></button>
+ </div>
+</div> 
+{% endblock %}

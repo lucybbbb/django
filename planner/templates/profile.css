@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+{% load crispy_forms_tags %}
+{% load static %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  overflow: hidden;
+  background-image: url({% static '/photos/f56.jpg' %});
+  background-repeat:no-repeat;
+  background-size:100%;
+  padding: 90px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+/* nav bar */
+#topnav {
+  overflow: hidden;
+  background-color: #51753e;
+}
+
+
+.footer {
+  background-color: #f1f511f5;
+  color: #4c1fee;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 30px 0px 30px;
+  height: 60px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+#navbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+img {
+    float:left;
+  }
+}
+</style>
+</head>
+ 
+<body>
+<div id="navbar">
+  <a href="#default" id="logo">MyFitnessApp</a>
+  <div id="navbar-right">
+    <a href="{% url 'planner:account' %}">ACCOUNT MENU</a>
+    
+    <a href="{% url 'recipe:recipe_list' %}">BROWSE RECIPES</a>
+    <a href="{% url 'logout' %}">LOGOUT</a>
+  </div>
+</div>
+
+<div class="footer" style="margin-top:200px;">
+<p> Calorie Counter<br>
+    Contact Us<br>    
+    Blog<br> </p>
+</div>
+
+  
+ 
+
+
+<div style= "margin-top:210px;padding:15px 15px 2500px;font-size:30px; background-image: url({% static '/photos/f18.jpg' %}); background-size:100% ">
+   <div class="row my-3 p-3">
+     <h1 style="color: red;">This is the profile page for {{user.username}}</h1>
+   </div>
+
+<div class="row my-3 p-3">
+
+    {% if user_form.errors %}
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <div id="form_errors">
+                {% for key, value in user_form.errors.items %}
+                    <strong>{{ value }}</strong>
+                {% endfor %}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    {% block body_block %}
+       {% if user.is_authenticated %}
+        <img src="{{ user.profile_form.avatar.url }}" 
+       {% endif %} 
+     
+    {% endblock %}   
+  
+
+    <div class="form-content">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                       <p><label class="small mb-1">Username:</label>
+                            {{user_form.username}}</p>
+                        <p><label class="small mb-1">Email:</label>
+                            {{user_form.email}}</p>
+                    </div>
+                    <div class="form-group">
+                        <a href="#">Change Password</a>
+                        <hr>
+                        <label class="small mb-1">Change Avatar:</label>
+                        <p class="lead"> Photo: {{profile_form.avatar}}<img src="{{ profile_form.avatar.url }}" />
+                    </div>
+                    <label class="small mb-1">Bio:</label> {{ profile_form.bio }}
+                </div>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-dark btn-lg">Save Changes</button>
+            <button type="reset" class="btn btn-dark btn-lg">Reset</button>
+        </form>
+    </div>
+   
+    
+        <a href="{% url 'planner:account' %}">Back</a>
+    </form>
+ </div>   
+</body>    

@@ -1,0 +1,72 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+<body style="background-image: url({% static '/images/f56.jpg' %});
+background-repeat:no-repeat;
+background-size:cover;">
+</body>
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<style>
+div.content {
+    height: 50px;
+    display:grid;
+    align-items: center;
+    justify-content: center;
+}
+div.item {
+    width: 10em;
+}
+           
+</style>
+<button class="btn btn-success btn-lg float-right" type="submit" style="background-color: rgb(236, 232, 0)";>
+      <a href="{% url 'login' %}">Back to Login</a></button>
+<div class="content"></div>
+      
+    <body>
+           
+ 
+            <h1 style="color:green; font-style:italic; size: 16px">
+             DIETARY REQUIREMENTS 
+          </h1>
+            <h2 style="font-style:italic; color:green ;">
+               Dietary restrictions MUST be indicated here to recieve a personalized meal planner.</h2>
+                <h3 style="font-style:italic; color: green ;">State dietary restrictions, if any:</h3></body>
+          
+            <form action=" ">
+                <select name="Bikes" multiple>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Gluten-free">Gluten-free</option>
+                    <option value="Kosher">Kosher</option>
+                    <option value="Halal">Halal</option>
+                    <option value="Lactose-intolerant">Lactose-intolerant</option>
+                    <option value="No nuts">No nuts</option>
+                    <option value="No alcohol">No alcohol</option>
+                    
+                    <option value="Other">Pulsav</option>
+
+                </select>
+                <input type="submit">
+            </form>
+      
+            <p>Hold down the Ctrl button to select multiple options.</p>
+      
+ </div>       
+<body>
+<p style="font-size: 20px"><img src="{% static '/images/f35.jpg' %}" alt='f36' style="width:400px;height:400px; 
+    display: block;margin-right:15px;float:left"><b float: center>Stop aiming for a particular amount of servings in each food 
+    category and focus on total daily intake.</p>  
+<p style="font-size: 30px; color: red">Find your healthy eating style!</p>
+    <p style="font-size: 20px"><img src="{% static '/images/f36.jpg' %}" alt='f36' style="width:380px;height:200px; 
+        display: block;margin-right:15px;float:right">   
+</body>
+    </body>
+
+    </html>
+
+{% endblock %}

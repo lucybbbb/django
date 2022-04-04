@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+
+<title>Edit Meal Plan</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* header */
+.header {
+  background-image:url(/static/photos/f56.jpg) ;
+  padding: 30px;
+  background-size:100%;
+  background-repeat:no-repeat;
+  text-align: center;
+  
+}
+
+/* nav bar */
+.topnav {
+  overflow: hidden;
+  background-color: #51753e;
+}
+
+/* nav bar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* hover */
+
+.topnav a:hover {
+  background-color: rgb(188, 207, 196);
+  color: black;
+}
+
+/* buttons */
+.button {
+  background-color: rgb(229, 232, 233);
+  border: none;
+  color: white;
+  padding: 25px 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #0b3a04;
+  display: inline-block;
+  font-size: 16px;
+  /*margin: 4px 2px;*/
+  cursor: pointer;
+  width: 200px;
+  height: 400px;
+  margin-top:200px;
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 150px;
+  max-height: 350px;
+  display: inline-block;
+}
+/* bottom hlink */
+a {
+  color: #d61ba7;
+  align: center;
+}
+
+img {
+  border-radius: 50%;
+}
+
+
+.footer {
+  background-color: #f1f511f5;
+  color: #4c1fee;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px 30px 0px 30px;
+  height: 60px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.circle-container {
+  position: relative;
+  width: 50em;
+  height: 30em;
+  padding: 3.8em;
+  /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+  /*border: dashed 1px;*/
+  border-radius: 50%;
+  margin: 1em auto 0;
+}
+.circle-container a {
+  display: block;
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 6em; height: 10em;
+  margin: -4em;
+}
+.circle-container img { display: block; width:100%; }
+.deg0 { transform: translate(25em); } /* 12em = half the width of the wrapper */
+.deg45 { transform: rotate(45deg) translate(20em) rotate(-45deg); }
+.deg135 { transform: rotate(135deg) translate(25em) rotate(-135deg); }
+.deg180 { transform: translate(-25em); }
+.deg225 { transform: rotate(225deg) translate(25em) rotate(-225deg); }
+.deg315 { transform: rotate(315deg) translate(25em) rotate(-315deg); }
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>MY MEAL PLAN: {{user.username}}</h1>
+</div>
+
+<div class="topnav">
+  <a href="{% url 'planner:account' %}">Back</a>
+  <a href="{% url 'planner:account' %}">ACCOUNT MENU</a>
+  <a href="{% url 'recipe:recipe_list' %}">BROWSE RECIPES</a>
+  <a href="{% url 'logout' %}">LOGOUT</a>
+</div>
+
+&nbsp;
+<body> 
+<h1 style="font-size:45px; text-align: center;"><b>Eat Healthy<span style="color: green;"> All Week Long</b></h1>
+<img src= "{% static 'photos/p12.jpg' %}", style="float:left; margin:0.5em; width:500px; height:500px; ;" />
+</body>
+
+<body>
+<div class='circle-container' style="margin-top:200px;">
+        <a href='#' class='center'><button style="width:300px;height: 90px; background-color:rgb(240, 222, 222);"><b>START MEAL PLANNING</b></button></a>
+        <a href='#' class='deg0'><img src="{% static 'photos/f1.jpg' %}" style="width:250px;height:200px;" ></a>
+        <a href='#' class='deg45'><img src="{% static 'photos/f4.jpg' %}" style="width:250px;height:250px;" ></a>
+        <a href='#' class='deg135'><img src="{% static 'photos/f14.jpg' %}" style="width:350px;height:200px;" ></a>
+        <a href='#' class='deg180'><img src="{% static 'photos/kale.jpg' %}" style="width:300px;height:200px;" ></a>
+        <a href='#' class='deg225'><img src="{% static 'photos/potato.jpg' %}" style="width:250px;height:250px;" ></a>
+        <a href='#' class='deg315'><img src= "{% static 'photos/f2.jpg' %}" style="width:250px;height:200px;" ></a>
+</div>
+</body>
+&nbsp;
+
+
+<body>
+  <div class="button">
+    <p><b>MONDAY</b></p>
+    <img src= "{% static 'photos/f72.jpg' %}", style="float:left" margin:"0.5em" width=100px />
+    <p>BREAKFAST</p>
+    <img src= "{% static 'photos/f73.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>LUNCH</p>
+    <img src= "{% static 'photos/f74.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>DINNER</p>
+    <p><a href= "{% url 'planner:planner_day' %}">Edit recipe</a></p>
+   </div>
+
+  <div  class="button" style="margin-top:250px;">
+    <p><b>TUESDAY</b></p>
+    <img src="{% static 'photos/f75.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>BREAKFAST</p>
+    <img src="{% static 'photos/f76.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>LUNCH</p>
+    <img src="{% static 'photos/f77.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>DINNER</p>
+    <p><a href= "{% url 'planner:planner_day' %}">Edit recipe</a></p>
+  </div>
+
+  <div class="button">
+    <p><b>WEDNESDAY</b></p>
+    <img src= "{% static 'photos/f54.jpg' %}", style="float:left" margin:"0.5em" width=100px />
+    <p>BREAKFAST</p>
+    <img src= "{% static 'photos/f55.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>LUNCH</p>
+    <img src= "{% static 'photos/f57.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>DINNER</p>
+    <p><a href= "{% url 'planner:planner_day' %}">Edit recipe</a></p>
+  </div>
+
+  <div class="button">
+    <p><b>THURSDAY</b></p>
+    <img src= "{% static 'photos/f59.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>BREAKFAST</p>
+    <img src= "{% static 'photos/f60.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>LUNCH</p>
+    <img src="{% static 'photos/f61.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>DINNER</p>
+    <p><a href= "{% url 'planner:planner_day' %}">Edit recipe</a></p>
+  </div>
+
+  <div class="button">
+    <p><b>FRIDAY</b></p>
+    <img src= "{% static 'photos/f62.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>BREAKFAST</p>
+    <img src= "{% static 'photos/f64.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>LUNCH</p>
+    <img src= "{% static 'photos/f65.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>DINNER</p>
+    <p><a href= "{% url 'planner:planner_day' %}">Edit recipe</a></p>
+  </div>
+
+  <div class="button">
+    <p><b>SATURDAY</b></p>
+    <img src= "{% static 'photos/f66.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>BREAKFAST</p>
+    <img src= "{% static 'photos/f67.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>LUNCH</p>
+    <img src= "{% static 'photos/f68.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>DINNER</p>
+    <p><a href= "{% url 'planner:planner_day' %}">Edit recipe</a></p>
+  </div>
+
+
+  <div class="button">
+    <p><b>SUNDAY</b></p>
+    <img src= "{% static 'photos/f69.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>BREAKFAST</p>
+    <img src="{% static 'photos/f70.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>LUNCH</p>
+    <img src= "{% static 'photos/f71.jpg' %}", style="float:left" margin:"0.5em" width=100 />
+    <p>DINNER</p>
+    <p><a href= "{% url 'planner:planner_day' %}">Edit recipe</a></p>
+  </div>
+
+</body>
+
+
+<body>
+ <h2 style="font-size:35px; color:blue; margin-bottom: 50px; text-align:center;">Design a Meal Plan</h2>
+    <p style="text-align: center;">Use our <span style="color:red">MyFitnessApp</span> to add recipes to your weekly meal plan.
+     It's as simple as drag and drop.
+     You can add as many recipes as you want and keep track of your daily calorie intake.</p>
+</body>
+
+<p><b><a href="default.asp" target="_blank">Back to meal planner</a></b></p>
+<body>
+<div class="footer" style="margin-top:150px;">
+  <p>DISCLAIMER: The content on this web site is for information purposes only.  
+  Any information on this website is not intended to diagnose or treat any disease.
+ MyFitnessApp and is not a medical 
+  doctor and cannot diagnose, treat, or cure any disease. You should always consult with
+  your medical doctor before making any changes to your diet, prescription medications, lifestyle, or exercise program.</p>
+</div>
+</body>

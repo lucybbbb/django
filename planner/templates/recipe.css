@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing:border-box;
+}
+.header {
+  background-image:url({% static 'photos/w1.jpg' %}) ;
+padding: 30px;
+background-size:100%;
+background-repeat:no-repeat;
+text-align: center;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding: 64px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+.large-font {
+  font-size: 48px;
+}
+
+.xlarge-font {
+  font-size: 64px
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #04AA6D;
+}
+/* nav bar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* hover */
+.topnav a:hover {
+  background-color: rgb(219, 218, 218);
+  color: black;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #51753e;
+}
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+  }
+}
+</style>
+</head>
+
+
+
+<div class ="header">
+      <h1 style="font-size: 48px">MY MEAL PLAN</h1>
+</div>
+
+<div class="topnav">
+   <a href="{% url 'planner:account' %}">Back</a>
+   <a href="{% url 'planner:account' %}">ACCOUNT MENU</a>
+   <a href="{% url 'recipe:recipe_list' %}">BROWSE RECIPES</a>
+   <a href="{% url 'logout' %}">LOGOUT</a>
+</div>
+<body>
+
+<div style="text-align:center">
+  <h2>DINNER MEAL SELECTION</h2>
+  <p>RECOMMENDED RECIPES</p>
+</div>
+
+<!-- The App Section -->
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      <h1 class="large-font"><b>Vegan kale pesto pasta</b></h1>
+      <h1 class="large-font" style="color:MediumSeaGreen;"><b>Why kale?</b></h1>
+      <p><span style="font-size:16px">Kale, the king of the leafy greens, some love it, some not so much, but I think we can all agree that kale is a nutritional power house.</span> Whizz up kale, pumpkin seeds, basil and garlic to make this easy kale pesto. It's perfect stirred through wholemeal spaghetti for a healthy vegan meal</p>
+      <p>Healthy Tip: Full-grown kale can be a bit tough when eating raw in salads. Soften, aka massage, the kale first by tossing it with lemon juice, or the dressing you’re pairing it with, and let rest for 15 – 30 minutes, tossing occasionally.</p>
+      <button class="button">View Recipe</button>
+    </div>
+    <div class="column-33">
+        <img src= "{% static 'photos/kale.jpg' %}" height="471">
+    </div>
+  </div>
+</div>
+
+<!-- Clarity Section -->
+<div class="container" style="background-color:#f1f1f1">
+  <div class="row">
+    <div class="column-33">
+      <img src="{% static 'photos/potato.jpg' %}" alt="App" width="335" height="471">
+    </div>
+    <div class="column-66">
+      <h1 class="large-font"><b>Satay sweet potato curry</b></h1>
+      <h1 class="large-font" style="color:red;"><b>The flavours of Indian food </b></h1>
+      <p><span style="font-size:16px">This incredibly easy curry recipe is a perfect familly dinner when you want Indian curyy in a hurry.</span>Cook this tasty vegan curry for an exotic yet easy family dinner. With spinach and sweet potato, it boasts two of your five-a-day and it’s under 400 calories</p>
+      <button class="button" style="background-color:red">View recipe</button>
+    </div>
+  </div>
+</div>
+
+<!-- The App Section -->
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      <h1 class="large-font"><b>Roasted aubergine & tomato curry</b></h1>
+      <h1 class="large-font" style="color:MediumSeaGreen;"><b>If you’re trying to convince someone to like aubergine, this is it!</b></h1>
+      <p><span style="font-size:16px">A beautiful, mild curry that involves minimal cooking time and maximum flavour. </span> Slightly sweet with added richness from the coconut milk, this simple vegan curry is a winner. 
+      It's also freezable if you need a quick midweek fix.</p>
+      <button class="button">View recipe</button>
+    </div>
+    <div class="column-33">
+        <img src="{% static 'photos/aub.jpg' %}" width="335" height="471" >
+    </div>
+     <button class="button" align: center><a href="{% url 'planner:account' %}">Account Menu</a></button>
+  </div>
+ 
+</div>
+
+</body>
+</html>

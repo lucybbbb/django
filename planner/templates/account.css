@@ -1,0 +1,251 @@
+<html lang="en">
+<head>
+{% load static %}
+
+<title>Edit Meal Plan</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* header */
+*.header {
+  background-image:url(/static/photos/f56.jpg) ;
+  padding: 40px;
+  background-size:100%;
+  background-repeat:no-repeat;
+  text-align: center;
+  
+}
+
+/* nav bar */
+*.topnav {
+  overflow: hidden;
+  background-color: #51753e;
+}
+
+/* nav bar links */
+*.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* hover */
+
+*.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* buttons */
+*.button {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  color: #64D353;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 150px;
+  height: 350px;
+}
+/* bottom hlink */
+a {
+  color: #64D353;
+  align: center;
+}
+
+
+
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #51753e;
+  color: #eb1a8df5;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  text-align: center;
+}
+
+.menu li:hover {
+  background-color: #f1f511f5;
+}
+
+.aside {
+  background-color: #f1f511f5;
+  padding: 15px;
+  color: #4c1fee;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #f1f511f5;
+  color: #4c1fee;
+ 
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 10px 0px 10px;
+
+  height: 40px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+</head>
+<body>
+
+</style>
+</head>
+
+<body>
+<div class="header">
+  <h1>MY MEAL PLAN: {{user.username}}</h1>
+</div>
+<div class="topnav">
+  <a href="{% url 'planner:account' %}">Back</a>
+  <a href="{% url 'planner:account' %}">ACCOUNT MENU</a>
+  <a href="{% url 'logout' %}">LOGOUT</a>
+</div>
+&nbsp;
+
+<body>
+
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    <ul>
+      <li><a href ="{% url 'planner:meal_editor' %}">Meal Plan</a></li>
+      <li><a href= "{% url 'planner:users-profile' %}">Personal Details</a></li>
+      <li><a href="{% url 'planner:dietary' %}">Dietary Requirements</a></li>
+      <li><a href="{% url 'calories:home1' %}">Calorie Statistics</a></li>
+    </ul>
+    <img src="{% static 'photos/f53.jpg' %}" alt='f53' 
+    style="width:700px;height:400px; display: block; margin-left: auto; margin-right: auto;">
+  </div>
+
+  <div class="col-6 col-s-9">
+    <h1>Healthy meal plans</h1>
+    <h2>What Does Healthy Even Mean?</h2>
+      <p><b>
+      What Does Healthy Even Mean?<br>
+      At Healthy Meal Plans, we understand that "healthy" actually means something different to everyone. 
+      So we've worked tirelessly to ensure that this site offers options no matter what your taste,
+       cooking experience, or dietary preferences are.</b><br>
+      <p><b> Healthy Means <span style="color:green"><b>Satisfying</p>
+      Our recipes are loaded with nutrients, fiber, and protein. 
+      They're designed to help you feel nourished and satiated. 
+      We believe that this is the real secret to eating well.</b><br>
+      <p><b>Healthy Means <span style="color:green">Real Food</p>
+      Our recipes feature ntritious, whole food ingredients that you can feel good about and that can 
+      easily be found at your local supermarket.</b><br>
+      <p><b>Healthy Means<span style="color:green"><b>Cooking at Home</p>
+      The first step to healthy eating begins simply with cooking at home. 
+      Knowing what goes into your food 
+      is the best way to get the most out of it.</b><br></p>
+   
+</div>
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>What is meal planning?</h2>
+      <p>Meal planning is the simple act of planning and writing down any 
+      of your meals for the week (or month!) ahead of time.</p>
+      <h2>Why Are Healthy Eating Habits Important?</h2>
+      <p>"When diet is wrong, medicine is of no use. When diet is correct,
+      medicine is of no need." - Ayurvedic Proverb</p>
+      <h2>How?</h2>
+      <p>Planning can really help you have healthy meals and snacks no matter how busy things get. </p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p> “Let food be thy medicine, thy medicine shall be thy food.” – Hippocrates, Ancient Greek physician</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
