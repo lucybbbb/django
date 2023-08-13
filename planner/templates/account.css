@@ -190,7 +190,7 @@ html {
       <li><a href ="{% url 'planner:meal_editor' %}">Meal Plan</a></li>
       <li><a href= "{% url 'planner:users-profile' %}">Personal Details</a></li>
       <li><a href="{% url 'planner:dietary' %}">Dietary Requirements</a></li>
-      <li><a href="{% url 'calories:home1' %}">Calorie Statistics</a></li>
+      <li><a href="{% url 'calculator:userPage' %}">Calorie Statistics</a></li>
     </ul>
     <img src="{% static 'photos/f53.jpg' %}" alt='f53' 
     style="width:700px;height:400px; display: block; margin-left: auto; margin-right: auto;">

@@ -30,7 +30,7 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     path('planner/', include('planner.urls', namespace='planner')),
     path('recipe/', include('recipe.urls', namespace='recipe')),
-    path(' calories/', include('calories.urls', namespace='calories')),
+    path('calculator/', include('calculator.urls', namespace='calculator')),
     path('catalog/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='home.css'), name='home'),
     

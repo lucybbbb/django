@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os # needed by code below
-
+import django
+from django.utils.translation import gettext
+django.utils.translation.ugettext = gettext
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,12 +39,13 @@ INSTALLED_APPS = [
     'recipe.apps.RecipeConfig',
     'planner.apps.PlannerConfig',
     'catalog.apps.CatalogConfig',
-    'calories.apps.CaloriesConfig',
+    'calculator.apps.CalculatorConfig',
     'test_project',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    "django_filters",
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
@@ -99,7 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mytest',
         'USER': 'root',
-        'PASSWORD': 'Impington115!',
+        'PASSWORD': 'Lucy23',
         'HOST': '127.0.0.1',
         'PORT': '3306',
 
@@ -109,7 +112,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mytest',
         'USER': 'root',
-        'PASSWORD': 'Impington115!',
+        'PASSWORD': 'Lucy23',
         'HOST': '127.0.0.1',
         'PORT': '3306',
 
@@ -119,7 +122,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mytest',
         'USER': 'root',
-        'PASSWORD': 'Impington115!',
+        'PASSWORD': 'Lucy23',
         'HOST': '127.0.0.1',
         'PORT': '3306',
 
